@@ -493,6 +493,13 @@ h1 { line-height: 1.15; }
 .about-page-row > .about-page-body { padding-bottom: var(--bd-space-3); }
 .about-page-row .about-links a { display: flex; align-items: center; min-height: 2.75rem; }
 @media (min-width: 72rem) { .about-page-row { display: none; } }
+/* "Checked against" chip: a link to the card (src/data/pinned-releases.json switches it on). One link per place the card is, chosen by the same breakpoint. */
+.docs-chip.checked { color: var(--sl-color-gray-2); text-decoration: none; }
+.docs-chip.checked:hover { border-color: var(--bd-control-line); color: var(--sl-color-text); }
+.checked-to-rail { display: none; }
+@media (min-width: 72rem) { .checked-to-rail { display: inline-flex; } .checked-to-row { display: none; } }
+.about-page-row { scroll-margin-top: calc(var(--sl-nav-height) + var(--bd-space-4)); }
+.about-page-rail:has(:target), .about-page-row:target { outline: 2px solid var(--sl-color-text-accent); outline-offset: 2px; }
 /* Before you start: sentences from a migration check, in the warning colours, above the article. */
 .before-you-start { max-width: 34rem; margin: 0 0 var(--bd-space-5); padding: var(--bd-space-4) var(--bd-space-5); border: 1px solid var(--bd-warn-line); border-radius: var(--bd-radius-lg); background: var(--bd-warn-bg); }
 .before-you-start h2 { display: flex; align-items: center; gap: var(--bd-space-2); margin: 0 0 var(--bd-space-2); color: var(--bd-warn-ink); font-size: var(--bd-fs-ui); font-weight: 600; line-height: 1.3; }

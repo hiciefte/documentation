@@ -1,0 +1,38 @@
+{
+  "_about": "Which release each commit-pinned source in migration/source-review-notes.json belongs to, for the \"Checked against <release>\" chip (src/components/PageTitle.astro). A key is owner/repo@<40-character commit>. Each entry names the release tag whose commit is exactly that commit; evidence is the GitHub API ref of that tag, and resolved records what the API returned when it was checked, so nothing is read from the notes' prose. scripts/lib/pinned-releases.mjs fails the build when a note pins a commit that has no entry here, or when an entry's tag does not resolve to its own commit. To add an entry for a new pin: gh api repos/<owner>/<repo>/git/ref/tags/<tag>, follow an annotated tag with gh api repos/<owner>/<repo>/git/tags/<object sha>, and compare the commit with the pin. A commit that is not a release's tagged commit gets no entry and no chip. showCheckedAgainst is the switch for the chip: false until the maintainers decide the wording.",
+  "showCheckedAgainst": false,
+  "pins": {
+    "bisq-network/bisq@ea9d5dff90c99ac462f2b0a7bf9ef92683956619": {
+      "product": "Bisq 1",
+      "release": "v1.10.11",
+      "tag": "v1.10.11",
+      "evidence": "https://api.github.com/repos/bisq-network/bisq/git/refs/tags/v1.10.11",
+      "checked": "2026-11-13",
+      "resolved": {
+        "tagObject": "dc7e5acbd1a7e259b2708b159b40435d7d5f6e06",
+        "tagObjectType": "tag",
+        "commit": "ea9d5dff90c99ac462f2b0a7bf9ef92683956619",
+        "tagger": "Alejandro García",
+        "taggedAt": "2026-11-05T18:21:18Z",
+        "signature": "GitHub reports the tag signature valid",
+        "compare": "compare/ea9d5dff90c99ac462f2b0a7bf9ef92683956619...v1.10.11: identical, 0 ahead, 0 behind"
+      }
+    },
+    "bisq-network/bisq2@cfe8ab251f2b6579f29e9955036afc33ba36861e": {
+      "product": "Bisq 2",
+      "release": "v2.1.15",
+      "tag": "v2.1.15",
+      "evidence": "https://api.github.com/repos/bisq-network/bisq2/git/refs/tags/v2.1.15",
+      "checked": "2026-11-13",
+      "resolved": {
+        "tagObject": "53e6ff4cefc1061ce154457294205982c1627d77",
+        "tagObjectType": "tag",
+        "commit": "cfe8ab251f2b6579f29e9955036afc33ba36861e",
+        "tagger": "Alejandro García",
+        "taggedAt": "2026-11-04T22:14:54Z",
+        "signature": "GitHub reports the tag signature valid",
+        "compare": "compare/cfe8ab251f2b6579f29e9955036afc33ba36861e...v2.1.15: identical, 0 ahead, 0 behind"
+      }
+    }
+  }
+}
